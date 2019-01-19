@@ -70,7 +70,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 36
+  controlID: 53
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 129
+  controlID: 130
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_MinSize: {x: 277, y: 292}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 131
+  controlID: 132
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 35
+  controlID: 52
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -216,7 +216,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 130
+  controlID: 131
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -395,18 +395,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets
+    - Assets/Materials
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Materials
   m_LastFoldersGridSize: -1
   m_LastProjectPath: "D:\\masa\xFCst\xFC\\unity\\oyunlar\\New\\Labyrinth"
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 06270000
-    m_LastClickedID: 9990
+    m_SelectedIDs: 6e270000
+    m_LastClickedID: 10094
     m_ExpandedIDs: 000000000627000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -462,7 +462,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -551,9 +551,9 @@ MonoBehaviour:
     height: 608
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 8efbffff00000000
+    m_SelectedIDs: b88e9dffa4389dff08589dff
+    m_LastClickedID: -6465528
+    m_ExpandedIDs: e273ffff8efbffff0000000084270000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -603,14 +603,14 @@ MonoBehaviour:
     width: 442
     height: 608
   m_SceneLighting: 1
-  lastFramingTime: 292.54752073802877
+  lastFramingTime: 162993.77253877436
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -6.675, y: 29.28, z: 1.3000002}
+    m_Target: {x: -23.573456, y: -6.21875, z: -21.214844}
     speed: 2
-    m_Value: {x: -6.675, y: 29.28, z: 1.3000002}
+    m_Value: {x: -23.573456, y: -6.21875, z: -21.214844}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -633,20 +633,20 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.005627478, y: 0.6925064, z: -0.7213696, w: 0.0054022516}
+    m_Target: {x: 0.0011361636, y: -0.77448237, z: 0.632593, w: 0.0013912844}
     speed: 2
-    m_Value: {x: 0.005627478, y: 0.6925064, z: -0.7213696, w: 0.0054022516}
+    m_Value: {x: 0.0011361636, y: -0.77448237, z: 0.632593, w: 0.0013912844}
   m_Size:
-    m_Target: 22
+    m_Target: 59.191708
     speed: 2
-    m_Value: 22
+    m_Value: 59.191708
   m_Ortho:
-    m_Target: 0
+    m_Target: 1
     speed: 2
-    m_Value: 0
+    m_Value: 1
   m_ShowGlobalGrid: 1
-  m_LastSceneViewRotation: {x: 0, y: 0, z: 0, w: 0}
-  m_LastSceneViewOrtho: 0
+  m_LastSceneViewRotation: {x: -0.0005431909, y: 0.023399413, z: -0.021551488, w: -0.9994938}
+  m_LastSceneViewOrtho: 1
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
   m_LastLockedObject: {fileID: 0}
