@@ -861,6 +861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d62698a04c6db4f865f985152b86e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random_setting_area: 9
 --- !u!114 &1427133204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -895,6 +896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   area: 15
+  no_find_time: 10
 --- !u!1 &1722302198
 GameObject:
   m_ObjectHideFlags: 0

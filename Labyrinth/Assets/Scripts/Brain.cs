@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Brain : MonoBehaviour {
 
-    float l_r = 0.5f;
+    float l_r = 0.2f;
     float gamma = 0.8f;
 
     float[,] q_table;
@@ -16,27 +16,44 @@ public class Brain : MonoBehaviour {
     [SerializeField]
     float no_find_time = 15;
 
-    float time = 0;
+    float time;
     void Awake()
     {
+        time = no_find_time;
         q_table = new float[area, area];
         reward_table = new int[area, area];
     }
 
     public int[] Q_Learning(int x, int y, List<int[]> roads)
     {
-        if (roads.Count < 2 || time < Time.deltaTime)
+        if (roads.Count < 2)
         {
-            time = no_find_time + Time.deltaTime;
+            time = no_find_time + Time.time;
             int[] array = { -2, -2 };
             reward_table[x, y] = -100;
+            q_table[x, y] += l_r *
+                (reward_table[x, y]
+                    + gamma * (Max(x, y, 0, 0)
+                    + Min(x, y, 0, 0))
+                    - q_table[x, y]);
             return array;
         }
-        else if ((x == 29 || x == 1) && (y == 29 || y == 1) || time < Time.deltaTime)
+        else if ((x == 29 || x == 1) && (y == 29 || y == 1))
         {
-            time = no_find_time + Time.deltaTime;
+            time = no_find_time + Time.time;
             int[] array = { -2, -2 };
             reward_table[x, y] = 100;
+            q_table[x, y] += l_r *
+                (reward_table[x, y]
+                    + gamma * (Max(x, y, 0, 0)
+                    + Min(x, y, 0, 0))
+                    - q_table[x, y]);
+            return array;
+        }
+        else if (time < Time.time)
+        {
+            time = no_find_time + Time.time;
+            int[] array = { -2, -2 };
             return array;
         }
         else
@@ -68,14 +85,17 @@ public class Brain : MonoBehaviour {
                     {
                         int new_x_val = x + roads[road][0];
                         int new_y_val = y + roads[road][1];
-                        q_table[new_x_val, new_y_val] +=
-                            l_r * (
-                            reward_table[new_x_val, new_y_val]
-                            + gamma * (
-                                Max(new_x_val, new_y_val, roads[road][0], roads[road][1])
+                        Debug.Log("if new x-y " + new_x_val + "+++" + new_y_val+"result= "+ l_r *
+                            (reward_table[new_x_val, new_y_val]
+                            + gamma * (Max(new_x_val, new_y_val, roads[road][0], roads[road][1])
+                                + Min(new_x_val, new_y_val, roads[road][0], roads[road][1]))
+                                - q_table[new_x_val, new_y_val]));
+
+                        q_table[new_x_val, new_y_val] += l_r * 
+                            (reward_table[new_x_val, new_y_val]
+                            + gamma * ( Max(new_x_val, new_y_val, roads[road][0], roads[road][1])
                                 + Min(new_x_val, new_y_val, roads[road][0], roads[road][1])
-                                - q_table[new_x_val, new_y_val])
-                            );
+                                - q_table[new_x_val, new_y_val]));
                         new_x = roads[road][0];
                         new_y = roads[road][1];
                         break;
@@ -88,10 +108,24 @@ public class Brain : MonoBehaviour {
             }
             else
             {
+                float temp_max = Max(x + new_x, y + new_y, new_x, new_y);
+                float temp_min = Min(x + new_x, y + new_y, new_x, new_y);
+                if (temp_max > 0)
+                {
+                    temp_min = 0;
+                }
+                else
+                {
+                    temp_max = 0;
+                }
+                Debug.Log("else new x-y " + x + new_x + "+++" + y + new_y +"reslt "+ l_r *
+                    (reward_table[x + new_x, y + new_y]
+                        + gamma * (temp_max + temp_min)
+                        - q_table[x + new_x, y + new_y]));
+
                 q_table[x + new_x, y + new_y] += l_r *
                     (reward_table[x + new_x, y + new_y]
-                        + gamma * (Max(x + new_x, y + new_y, new_x, new_y) 
-                        + Min(x + new_x, y + new_y, new_x, new_y)
+                        + gamma * (temp_max + temp_min
                         - q_table[x + new_x, y + new_y]));
             }
             int[] array = { new_x, new_y };
