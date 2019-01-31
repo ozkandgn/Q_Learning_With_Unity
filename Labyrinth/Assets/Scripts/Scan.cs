@@ -4,32 +4,46 @@ using UnityEngine;
 
 public class Scan : MonoBehaviour {
     
-    public List<int> Scan_Environment()
+    public List<int[]> Scan_Environment()
     {
-        List<int> roads = new List<int>();
+        List<int[]> roads = new List<int[]>();
         Ray right = new Ray(transform.position, -transform.right);
         Ray left = new Ray(transform.position, transform.right);
         Ray up = new Ray(transform.position, -transform.forward);
         Ray duwn = new Ray(transform.position, transform.forward);
         RaycastHit hit;
+        int[] array = new int[2];
+
         if (!Physics.Raycast(right, out hit, 4))
         {
             //Debug.Log("right");
-            roads.Add(1);
+            array = new int[2];
+            array[0] = 1;
+            array[1] = 0;
+            roads.Add(array);
         }
         if (!Physics.Raycast(left, out hit, 4))
         {
-            roads.Add(2);
+            array = new int[2];
+            array[0] = -1;
+            array[1] = 0;
+            roads.Add(array);
             //Debug.Log("left");
         }
         if (!Physics.Raycast(up, out hit, 4))
         {
-            roads.Add(3);
+            array = new int[2];
+            array[0] = 0;
+            array[1] = 1;
+            roads.Add(array);
             //Debug.Log("up");
         }
         if (!Physics.Raycast(duwn, out hit, 4))
         {
-            roads.Add(4);
+            array = new int[2];
+            array[0] = 0;
+            array[1] = -1;
+            roads.Add(array);  
             //Debug.Log("down");
         }
         Debug.DrawRay(transform.position, -transform.right * 4, Color.red);
